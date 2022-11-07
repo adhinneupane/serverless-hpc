@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title> High Performance Computing on Serverless</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
+
+
+    <!-- Bootstrap core CSS -->
+<link href="/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="cover.css" rel="stylesheet">
+  </head>
+  <body class="d-flex h-100 text-center text-white" style="background-color: #095c78">
+
+    
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column" style="display: inline-block;">
+  <header class="mb-auto">
+
+       An anlaysis of HPC use cases on opensource/commercial clouds 
+<div style="height: 100px; width:800px">
+
+</div>
+  <div>
+    <img src="./movingcube.gif" alt="cube"  width="250" />
+    <table>
+        <tr>
+            <td style="margin-left: 50px;">
+                <h1 >
+                    <a href="http://localhost:3000/serverless-ml" style="text-decoration: none;color: inherit;">  Serverless FaaS </a>
+                </h1>
+            </td>
+            <td style="margin-left: 50px;">
+                <h1>
+                    <a href="http://localhost:3000/ml" style="text-decoration: none;color: inherit;"> Machine Learning </a>
+                </h1>
+            </td>
+        </tr>
+    </table>
+
+    </div>
+  </header>
+
+
+
+</div>
+
+
+
+
+</div>
+
+<div>
+
+  <canvas id="myChart" style="width:100%;max-width:700px;margin-left: 300px;"></canvas>
+
+  <script>
+var xValues = [10,50,100,500,1000,3000];
+
+new Chart("myChart", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      data: [22.39,34.3,45.41,84.6,92,283],
+      borderColor: "green",
+      backgroundColor: [
+                'rgba(46, 255, 104, 0.5)',
+                'rgba(46, 255, 104, 0.5)',
+                'rgba(46, 255, 104, 0.5)',
+                'rgba(46, 255, 104, 0.5)',
+                'rgba(46, 255, 104, 0.5)',
+                'rgba(46, 255, 104, 0.5)',
+                'rgba(46, 255, 104, 0.5)'
+            ],
+      fill: false
+    },{
+      data: [28.5,29.4,32.5,56.6,93.71,303],
+      borderColor: "red",
+      backgroundColor: [
+                'rgba(255, 99, 132, 0.5)',
+                'rgba(255, 99, 132, 0.5)',
+                'rgba(255, 99, 132, 0.5)',
+                'rgba(255, 99, 132, 0.5)',
+                'rgba(255, 99, 132, 0.5)',
+                'rgba(255, 99, 132, 0.5)',
+                'rgba(255, 99, 132, 0.5)',
+            ],
+      fill: false
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "Non Scalable Serverless vs Standalone Node"
+    }
+  }
+});
+
+  </script>
+
+
+</div>
+
+
+  </body>
+</html>

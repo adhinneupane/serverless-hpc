@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title> High Performance Computing on Serverless</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
+
+
+    <!-- Bootstrap core CSS -->
+<link href="/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="cover.css" rel="stylesheet">
+  </head>
+  <body class="d-flex h-100 text-center text-white bg-dark">
+    
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column" style="display: inline-block;">
+  <header class="mb-auto">
+  <div>
+
+      <nav class="nav nav-masthead justify-content-center float-md-end">
+        <h3 class="float-md-start mb-0">High Performance Computing on Serverless</h3>
+      <nav>
+
+        <nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <a class="nav-link" href="#">Features</a>
+        <a class="nav-link" href="#">Contact</a>
+      </nav>
+    </div>
+  </header>
+<table>
+<tr>
+  <td>
+
+      <h1>Serverless</h1>
+      <div>        
+        <input type="file" id="fileUpload">    
+     </div>    
+     <div> 
+        <button onclick="s3upload()">Submit</button>    
+     </div>     
+     <progress max=”100” value=”0”></progress>
+ 
+  </td>
+  <td>
+
+      <h1>Apache Openwhisk</h1>
+  
+      <div>        
+        <input type="file" id="fileUpload">    
+     </div>    
+     <div> 
+        <button onclick="s3upload()">Submit</button>    
+     </div>     
+     <progress max=”100” value=”0”></progress>
+
+  </td>
+</tr>
+</table>
+
+<div style="height: 200px; width: 900px; background-color:#222423">
+
+</div>
+
+
+<script>
+function wskUpload(){
+  $.ajax({
+  type: "POST",
+  url: " logs.us-east-1.<domain>",
+  data: `{
+    X-Amz-Date: <DATE>
+    Authorization: AWS4-HMAC-SHA256 Credential=<Credential>, SignedHeaders=content-type;date;host;user-agent;x-amz-date;x-amz-target;x-amzn-requestid, Signature=<Signature>
+    User-Agent: <UserAgentString>
+    Accept: application/json
+    Content-Type: application/x-amz-json-1.1
+    Content-Length: <PayloadSizeBytes>
+    Connection: Keep-Alive
+    X-Amz-Target: Logs_20140328.GetLogEvents
+    {
+      "logGroupName": "my-log-group",
+      "logStreamName": "my-log-stream"
+    }
+  }`,
+  success: function (result) {
+     console.log(result);
+  },
+  dataType: "json"
+});;
+}
+</script>
+
+
+
+
+
+<script type="text/javascript">
+  function s3upload() {
+     var files = document.getElementById('fileUpload').files;
+     if (files) 
+     {
+       var file = files[0];
+       var fileName = file.name;
+       var filePath = 'my-first-bucket-path/' + fileName;
+       var fileUrl = 'https://' + bucketRegion + '.amazonaws.com/my-    first-bucket/' +  filePath;
+       s3.upload({
+          Key: filePath,
+          Body: file,
+          ACL: 'public-read'
+          }, function(err, data) {
+          if(err) {
+          reject('error');
+          }
+          alert('Successfully Uploaded!');
+          }).on('httpUploadProgress', function (progress) {
+          var uploaded = parseInt((progress.loaded * 100) / progress.total);
+          $("progress").attr('value', uploaded);
+        });
+     }
+  };
+  </script>
+
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.24.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+//Bucket Configurations
+var bucketName = "tensorflow-image-collection";
+var bucketRegion = "us-east-1";
+var IdentityPoolId = "us-east-1:262b0c0e-3198-41cf-98b4-430ba812c08a";
+
+ AWS.config.update({
+                region: bucketRegion,
+                credentials: new AWS.CognitoIdentityCredentials({
+                    IdentityPoolId: IdentityPoolId
+                })
+            });
+
+            var s3 = new AWS.S3({
+                apiVersion: '2006-03-01',
+                params: {Bucket: bucketName}
+        });
+</script>
+
+</div>
+
+
+  </body>
+</html>

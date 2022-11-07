@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title> High Performance Computing on Serverless</title>
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+    </script>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
+    <!-- Bootstrap core CSS -->
+<link href="/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="cover.css" rel="stylesheet">
+  </head>
+  <body class="d-flex h-100 text-center text-white" style="background: #095c78">
+
+  <header class="mb-auto">
+  <div>
+  </div>
+  </header>
+
+  <nav class="nav nav-masthead justify-content-center float-md-end">
+    <h3 class="float-md-start mb-0" style="padding-top: 20px;">Serverless HPC FaaS for Machine Learning</h3>
+  <nav>
+
+    <div style=" margin-top:20px;height: 800px; width:1200px; padding-left: 0px;">
+      <img src="architecture-ml.gif" style="max-width: 100%; max-height: 100%">    
+  </div>
+
+<table>
+<tr>
+  <td>
+
+
+    <div style="height: 200px; width:700px; margin-left: 200px;">
+
+      <img src="dataset-cover.png" style="max-width: 100%; max-height: 100%">
+    <div>
+    </div>
+      <h4 style="padding-left: 20px;"> <p>
+        Trains a neural network model to classify 1000 images and return object category:
+      </p></h4>
+        <ul>
+            Parallel Processing: enabled
+        </ul>
+        <ul>
+            Concurrent Executions: 5
+        </ul>
+        <ul>
+            Scaling: Horizontal
+        </ul>
+        <ul>
+            Deployment configurations
+        </ul>
+            <ul class="h5">
+                Memory: 3008 MB 
+            </ul>
+            <ul class="h5">
+                Timeout: 10 minutes
+            </ul>
+            <ul class="h5">
+                Ephemeral Storage: 1024 MB 
+            </ul>
+        </ul>
+   
+
+  </td>
+  <div style="height: 100px; width:10px">
+  </div>
+  <td style="padding-left: 200px">
+  </td>
+</tr>
+</table>
+
+<script>
+function wskUpload(){
+  $.ajax({
+  type: "POST",
+  url: " logs.us-east-1.<domain>",
+  data: `{
+    X-Amz-Date: <DATE>
+    Authorization: AWS4-HMAC-SHA256 Credential=<Credential>, SignedHeaders=content-type;date;host;user-agent;x-amz-date;x-amz-target;x-amzn-requestid, Signature=<Signature>
+    User-Agent: <UserAgentString>
+    Accept: application/json
+    Content-Type: application/x-amz-json-1.1
+    Content-Length: <PayloadSizeBytes>
+    Connection: Keep-Alive
+    X-Amz-Target: Logs_20140328.GetLogEvents
+    {
+      "logGroupName": "my-log-group",
+      "logStreamName": "my-log-stream"
+    }
+  }`,
+  success: function (result) {
+     console.log(result);
+  },
+  dataType: "json"
+});;
+}
+</script>
+
+
+
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+</script>
+
+
+<script type="text/javascript">
+  function s3upload() {
+     var files = document.getElementById('fileUpload').files;
+     if (files) 
+     {
+      console.log( files)
+      for (let i = 0; i <= files.length-1; i++){
+       var file = files[i];
+       var fileName = file.name;
+       var filePath = 'my-first-bucket-path/' + fileName;
+       var fileUrl = 'https://' + bucketRegion + '.amazonaws.com/my-    first-bucket/' +  filePath;
+       s3.upload({
+          Key: filePath,
+          Body: file,
+          ACL: 'public-read'
+          }, function(err, data) {
+          if(err) {
+          reject('error');
+          }
+          alert('Successfully Uploaded!');
+          }).on('httpUploadProgress', function (progress) {
+          var uploaded = parseInt((progress.loaded * 100) / progress.total);
+          $("progress").attr('value', uploaded);
+        });
+     }
+  };
+      }
+
+  </script>
+
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.24.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+//Bucket Configurations
+var bucketName = "tensorflow-image-collection";
+var bucketRegion = "us-east-1";
+var IdentityPoolId = "us-east-1:262b0c0e-3198-41cf-98b4-430ba812c08a";
+
+ AWS.config.update({
+                region: bucketRegion,
+                credentials: new AWS.CognitoIdentityCredentials({
+                    IdentityPoolId: IdentityPoolId
+                })
+            });
+
+            var s3 = new AWS.S3({
+                apiVersion: '2006-03-01',
+                params: {Bucket: bucketName}
+        });
+</script>
+
+
+<script src="main.js"></script>
+
+<div>
+
+  <canvas id="myChart" style="width:100%;max-width:700px;margin-left: 300px;"></canvas>
+
+  <script>
+var xValues = [10,50,100,500,1000,3000];
+
+new Chart("myChart", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      data: [22.39,34.3,45.41,84.6,92,283],
+      borderColor: "green",
+      backgroundColor: [
+                'rgba(46, 255, 104, 0.5)',
+                'rgba(46, 255, 104, 0.5)',
+                'rgba(46, 255, 104, 0.5)',
+                'rgba(46, 255, 104, 0.5)',
+                'rgba(46, 255, 104, 0.5)',
+                'rgba(46, 255, 104, 0.5)',
+                'rgba(46, 255, 104, 0.5)'
+            ],
+      fill: false
+    },{
+      data: [28.5,29.4,32.5,56.6,93.71,303],
+      borderColor: "red",
+      backgroundColor: [
+                'rgba(255, 99, 132, 0.5)',
+                'rgba(255, 99, 132, 0.5)',
+                'rgba(255, 99, 132, 0.5)',
+                'rgba(255, 99, 132, 0.5)',
+                'rgba(255, 99, 132, 0.5)',
+                'rgba(255, 99, 132, 0.5)',
+                'rgba(255, 99, 132, 0.5)',
+            ],
+      fill: false
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "Non Scalable Serverless vs Standalone Node"
+    }
+  }
+});
+
+  </script>
+
+
+</div>
+
+
+
+
+<div>
+
+  <canvas id="myChart2" style="width:100%;max-width:700px;margin-left: 300px;"></canvas>
+
+  <script>
+var xValues = ['workload1','workload2','workload3','workload4','workload5'];
+
+new Chart("myChart2", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      data: [45,43,42,42,14],
+      borderColor: "green",
+      backgroundColor: [
+                'rgba(46, 255, 104, 0.5)',
+                'rgba(46, 255, 104, 0.5)',
+                'rgba(46, 255, 104, 0.5)',
+                'rgba(46, 255, 104, 0.5)',
+                'rgba(46, 255, 104, 0.5)',
+                'rgba(46, 255, 104, 0.5)',
+                'rgba(46, 255, 104, 0.5)'
+            ],
+      fill: false
+    },{
+      data: [109,109,110,110,109],
+      borderColor: "red",
+      backgroundColor: [
+                'rgba(255, 99, 132, 0.5)',
+                'rgba(255, 99, 132, 0.5)',
+                'rgba(255, 99, 132, 0.5)',
+                'rgba(255, 99, 132, 0.5)',
+                'rgba(255, 99, 132, 0.5)',
+                'rgba(255, 99, 132, 0.5)',
+                'rgba(255, 99, 132, 0.5)',
+            ],
+      fill: false
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "Parallel processing in Serverless vs Standalone Node"
+    }
+  }
+});
+
+  </script>
+
+
+</div>
+
+<h3 style="margin-top:500px"> Worlkload Configuration</h3>
+<div style="height: 600px; width:500px; margin-left: 450px;">
+    <select style="text-align: center;" id="concurrencyOptions" class="form-select" aria-label="Default select example">
+        <option selected>1000</option>
+      </select>
+    <div>
+        <button id="execute" style="margin-top: 10px;" type="button" class="btn btn-primary">Execute</button>
+    </div>
+</div>
+
+</body>
+
+
+</html>
