@@ -7,6 +7,7 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.84.0">
     <title> High Performance Computing on Serverless</title>
+    <script src="main.js"></script>
     <script
     src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
     </script>
@@ -51,7 +52,7 @@
 
 <table>
 <tr>
-  <td>
+  <td style="padding-bottom: 200px; margin: bottom 500px;">
 
 
     <div style="height: 200px; width:700px; margin-left: 200px;">
@@ -180,9 +181,64 @@ var IdentityPoolId = "us-east-1:262b0c0e-3198-41cf-98b4-430ba812c08a";
 </script>
 
 
-<script src="main.js"></script>
+
+
+
 
 <div>
+
+  <canvas id="myChart2" style="width:100%;max-width:700px;margin-left: 300px; margin-top: 500px;"></canvas>
+
+  <script>
+var xValues = ['workload1ssd','workload2','workload3','workload4','workload5'];
+
+new Chart("myChart2", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      data: [45,43,42,42,14],
+      borderColor: "green",
+      backgroundColor: [
+                'rgba(46, 255, 104, 0.5)',
+                'rgba(46, 255, 104, 0.5)',
+                'rgba(46, 255, 104, 0.5)',
+                'rgba(46, 255, 104, 0.5)',
+                'rgba(46, 255, 104, 0.5)',
+                'rgba(46, 255, 104, 0.5)',
+                'rgba(46, 255, 104, 0.5)'
+            ],
+      fill: false
+    },{
+      data: [109,109,110,110,109],
+      borderColor: "red",
+      backgroundColor: [
+                'rgba(255, 99, 132, 0.5)',
+                'rgba(255, 99, 132, 0.5)',
+                'rgba(255, 99, 132, 0.5)',
+                'rgba(255, 99, 132, 0.5)',
+                'rgba(255, 99, 132, 0.5)',
+                'rgba(255, 99, 132, 0.5)',
+                'rgba(255, 99, 132, 0.5)',
+            ],
+      fill: false
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "Parallel processing in Serverless vs Standalone Node"
+    }
+  }
+});
+
+  </script>
+
+
+</div>
+
+<div style="margin-top: 500px;">
 
   <canvas id="myChart" style="width:100%;max-width:700px;margin-left: 300px;"></canvas>
 
@@ -232,64 +288,8 @@ new Chart("myChart", {
 
   </script>
 
-
 </div>
 
-
-
-
-<div>
-
-  <canvas id="myChart2" style="width:100%;max-width:700px;margin-left: 300px;"></canvas>
-
-  <script>
-var xValues = ['workload1','workload2','workload3','workload4','workload5'];
-
-new Chart("myChart2", {
-  type: "bar",
-  data: {
-    labels: xValues,
-    datasets: [{
-      data: [45,43,42,42,14],
-      borderColor: "green",
-      backgroundColor: [
-                'rgba(46, 255, 104, 0.5)',
-                'rgba(46, 255, 104, 0.5)',
-                'rgba(46, 255, 104, 0.5)',
-                'rgba(46, 255, 104, 0.5)',
-                'rgba(46, 255, 104, 0.5)',
-                'rgba(46, 255, 104, 0.5)',
-                'rgba(46, 255, 104, 0.5)'
-            ],
-      fill: false
-    },{
-      data: [109,109,110,110,109],
-      borderColor: "red",
-      backgroundColor: [
-                'rgba(255, 99, 132, 0.5)',
-                'rgba(255, 99, 132, 0.5)',
-                'rgba(255, 99, 132, 0.5)',
-                'rgba(255, 99, 132, 0.5)',
-                'rgba(255, 99, 132, 0.5)',
-                'rgba(255, 99, 132, 0.5)',
-                'rgba(255, 99, 132, 0.5)',
-            ],
-      fill: false
-    }]
-  },
-  options: {
-    legend: {display: false},
-    title: {
-      display: true,
-      text: "Parallel processing in Serverless vs Standalone Node"
-    }
-  }
-});
-
-  </script>
-
-
-</div>
 
 <h3 style="margin-top:500px"> Worlkload Configuration</h3>
 <div style="height: 600px; width:500px; margin-left: 450px;">
@@ -297,7 +297,7 @@ new Chart("myChart2", {
         <option selected>1000</option>
       </select>
     <div>
-        <button id="execute" style="margin-top: 10px;" type="button" class="btn btn-primary">Execute</button>
+        <button id="submit" style="margin-top: 10px;" type="button" class="btn btn-primary">Execute</button>
     </div>
 </div>
 

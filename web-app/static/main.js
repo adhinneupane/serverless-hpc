@@ -1,4 +1,4 @@
-document.getElementById('execute').addEventListener("click",invokeLambda)
+
 
 var data
 
@@ -30,4 +30,11 @@ fetch('http://localhost:3000/aws-execute',
 return response;
 })
 .then(console.log("here"));    
+}
+
+var button = $('#execute')
+
+window.onload = function() {
+var js = document.getElementById('execute').addEventListener('click',invokeLambda)
+console.log(js)
 }

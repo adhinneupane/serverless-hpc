@@ -104,68 +104,18 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
 </script>
 
 
-<!-- <script type="text/javascript">
-  function s3upload() {
-     var files = document.getElementById('fileUpload').files;
-     if (files) 
-     {
-      console.log( files)
-      for (let i = 0; i <= files.length-1; i++){
-       var file = files[i];
-       var fileName = file.name;
-       var filePath = 'my-first-bucket-path/' + fileName;
-       var fileUrl = 'https://' + bucketRegion + '.amazonaws.com/my-    first-bucket/' +  filePath;
-       s3.upload({
-          Key: filePath,
-          Body: file,
-          ACL: 'public-read'
-          }, function(err, data) {
-          if(err) {
-          reject('error');
-          }
-          alert('Successfully Uploaded!');
-          }).on('httpUploadProgress', function (progress) {
-          var uploaded = parseInt((progress.loaded * 100) / progress.total);
-          $("progress").attr('value', uploaded);
-        });
-     }
-  };
-      }
-
-  </script> -->
-
 <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.24.min.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<!-- <script type="text/javascript">
-//Bucket Configurations
-var bucketName = "tensorflow-image-collection";
-var bucketRegion = "us-east-1";
-var IdentityPoolId = "us-east-1:262b0c0e-3198-41cf-98b4-430ba812c08a";
-
- AWS.config.update({
-                region: bucketRegion,
-                credentials: new AWS.CognitoIdentityCredentials({
-                    IdentityPoolId: IdentityPoolId
-                })
-            });
-
-            var s3 = new AWS.S3({
-                apiVersion: '2006-03-01',
-                params: {Bucket: bucketName}
-        });
-</script> -->
-
 
 <div style="background-color: white;">
 
   <div style="color:black">
-    U0Mjk2OTNlLTEyIDIuMDIyNDI5MGUtMDYgMi4zNjY2MDA1ZS0xNSA3Ljc4NTA0MTNlLTAxXV0KOQooM
-    U0Mjk2OTNlLTEyIDIuMDIyNDI5MGUtMDYgMi4zNjY2MDA1ZS0xNSA3Ljc4NTA0MTNlLTAxXV0KOQooM
-    U0Mjk2OTNlLTEyIDIuMDIyNDI5MGUtMDYgMi4zNjY2MDA1ZS0xNSA3Ljc4NTA0MTNlLTAxXV0KOQooM
-    U0Mjk2OTNlLTEyIDIuMDIyNDI5MGUtMDYgMi4zNjY2MDA1ZS0xNSA3Ljc4NTA0MTNlLTAxXV0KOQooM
+Some text here
   </div>
 
-  <canvas id="myChart" style="width:100%;max-width:700px;margin-left: 300px;"></canvas>
+
+<!-- graph 1 -->
+<canvas id="myChart" style="width:100%;max-width:700px;margin-left: 300px;"></canvas>
   <script>
 var xValues = [10,50,100,500,1000,3000];
 new Chart("myChart", {
@@ -210,12 +160,10 @@ new Chart("myChart", {
 });
 
   </script>
-<div style="color:black">
-  U0Mjk2OTNlLTEyIDIuMDIyNDI5MGUtMDYgMi4zNjY2MDA1ZS0xNSA3Ljc4NTA0MTNlLTAxXV0KOQooM
-  U0Mjk2OTNlLTEyIDIuMDIyNDI5MGUtMDYgMi4zNjY2MDA1ZS0xNSA3Ljc4NTA0MTNlLTAxXV0KOQooM
-  U0Mjk2OTNlLTEyIDIuMDIyNDI5MGUtMDYgMi4zNjY2MDA1ZS0xNSA3Ljc4NTA0MTNlLTAxXV0KOQooM
-  U0Mjk2OTNlLTEyIDIuMDIyNDI5MGUtMDYgMi4zNjY2MDA1ZS0xNSA3Ljc4NTA0MTNlLTAxXV0KOQooM
-</div>
+
+  <div style="color:black">
+  some text here
+  </div>
 
 
 </div>
