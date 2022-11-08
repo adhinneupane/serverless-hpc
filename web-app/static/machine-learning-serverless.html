@@ -35,7 +35,7 @@
     <!-- Custom styles for this template -->
     <link href="cover.css" rel="stylesheet">
   </head>
-  <body class="d-flex h-100 text-center text-white" style="background: #095c78">
+  <body class="d-flex h-100 text-center text-white" style="background-color:rgb(255, 255, 255)">
 
   <header class="mb-auto">
   <div>
@@ -95,39 +95,9 @@
 </tr>
 </table>
 
-<script>
-function wskUpload(){
-  $.ajax({
-  type: "POST",
-  url: " logs.us-east-1.<domain>",
-  data: `{
-    X-Amz-Date: <DATE>
-    Authorization: AWS4-HMAC-SHA256 Credential=<Credential>, SignedHeaders=content-type;date;host;user-agent;x-amz-date;x-amz-target;x-amzn-requestid, Signature=<Signature>
-    User-Agent: <UserAgentString>
-    Accept: application/json
-    Content-Type: application/x-amz-json-1.1
-    Content-Length: <PayloadSizeBytes>
-    Connection: Keep-Alive
-    X-Amz-Target: Logs_20140328.GetLogEvents
-    {
-      "logGroupName": "my-log-group",
-      "logStreamName": "my-log-stream"
-    }
-  }`,
-  success: function (result) {
-     console.log(result);
-  },
-  dataType: "json"
-});;
-}
-</script>
-
-
-
 <script
 src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
 </script>
-
 
 <script type="text/javascript">
   function s3upload() {
@@ -159,86 +129,63 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
 
   </script>
 
-<script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.24.min.js"></script>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script type="text/javascript">
-//Bucket Configurations
-var bucketName = "tensorflow-image-collection";
-var bucketRegion = "us-east-1";
-var IdentityPoolId = "us-east-1:262b0c0e-3198-41cf-98b4-430ba812c08a";
+<div style="background-color: white;">
 
- AWS.config.update({
-                region: bucketRegion,
-                credentials: new AWS.CognitoIdentityCredentials({
-                    IdentityPoolId: IdentityPoolId
-                })
-            });
-
-            var s3 = new AWS.S3({
-                apiVersion: '2006-03-01',
-                params: {Bucket: bucketName}
-        });
-</script>
+  <canvas id="myChart2" style="width:100%;max-width:700px;margin-left: 300px; margin-top: 500px;">
+  </canvas>
 
 
 
+<script>
+    var xValues = ['workload1ssd','workload2','workload3','workload4','workload5'];
 
+    new Chart("myChart2", {
+      type: "bar",
+      data: {
+        labels: xValues,
+        datasets: [{
+          data: [45,43,42,42,14],
+          borderColor: "green",
+          backgroundColor: [
+                    'rgba(46, 255, 104, 0.5)',
+                    'rgba(46, 255, 104, 0.5)',
+                    'rgba(46, 255, 104, 0.5)',
+                    'rgba(46, 255, 104, 0.5)',
+                    'rgba(46, 255, 104, 0.5)',
+                    'rgba(46, 255, 104, 0.5)',
+                    'rgba(46, 255, 104, 0.5)'
+                ],
+          fill: false
+        },{
+          data: [109,109,110,110,109],
+          borderColor: "red",
+          backgroundColor: [
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(255, 99, 132, 0.5)',
+                ],
+          fill: false
+        }]
+      },
+      options: {
+        legend: {display: false},
+        title: {
+          display: true,
+          text: "Parallel processing in Serverless vs Standalone Node"
+        }
+      }
+    });
 
+      </script>
 
-<div>
-
-  <canvas id="myChart2" style="width:100%;max-width:700px;margin-left: 300px; margin-top: 500px;"></canvas>
-
-  <script>
-var xValues = ['workload1ssd','workload2','workload3','workload4','workload5'];
-
-new Chart("myChart2", {
-  type: "bar",
-  data: {
-    labels: xValues,
-    datasets: [{
-      data: [45,43,42,42,14],
-      borderColor: "green",
-      backgroundColor: [
-                'rgba(46, 255, 104, 0.5)',
-                'rgba(46, 255, 104, 0.5)',
-                'rgba(46, 255, 104, 0.5)',
-                'rgba(46, 255, 104, 0.5)',
-                'rgba(46, 255, 104, 0.5)',
-                'rgba(46, 255, 104, 0.5)',
-                'rgba(46, 255, 104, 0.5)'
-            ],
-      fill: false
-    },{
-      data: [109,109,110,110,109],
-      borderColor: "red",
-      backgroundColor: [
-                'rgba(255, 99, 132, 0.5)',
-                'rgba(255, 99, 132, 0.5)',
-                'rgba(255, 99, 132, 0.5)',
-                'rgba(255, 99, 132, 0.5)',
-                'rgba(255, 99, 132, 0.5)',
-                'rgba(255, 99, 132, 0.5)',
-                'rgba(255, 99, 132, 0.5)',
-            ],
-      fill: false
-    }]
-  },
-  options: {
-    legend: {display: false},
-    title: {
-      display: true,
-      text: "Parallel processing in Serverless vs Standalone Node"
-    }
-  }
-});
-
-  </script>
-
-
+newchange
 </div>
 
-<div style="margin-top: 500px;">
+<div style="margin-top: 500px;"  style="background-color: white;">
 
   <canvas id="myChart" style="width:100%;max-width:700px;margin-left: 300px;"></canvas>
 
