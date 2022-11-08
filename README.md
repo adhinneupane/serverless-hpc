@@ -11,19 +11,19 @@ In the current configuration, we have implemented tensorflow image classificatio
 
 Requirements: 
 
-AWS account	N/A
-aws-cli	2.8.4
-Apache openwhisk	1.0.0
-wsk cli 	1.0.0
-docker	20.10.17
-funcx	1.0.4
-python	3.8
+AWS account	N/A \
+aws-cli	2.8.4  \ 
+Apache openwhisk	1.0.0 \
+wsk cli 	1.0.0 \
+docker	20.10.17 \
+funcx	1.0.4 \
+python	3.8 \
 TensorFlow 	2.0
 
 Before running the application, make sure: 
 
 Apache Openwhisk Endpoint is available on your computer. 
-Reference: https://github.com/apache/openwhisk#readme
+https://github.com/apache/openwhisk#readme
 
 AWS / WSK cli installation and configuration is complete. 
 aws-cli: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
@@ -32,7 +32,10 @@ wsk-cli: https://github.com/apache/openwhisk-cli
 AWS credentials are setup.
 
 Docker Daemon is logged in and running. 
-Reference: https://docs.docker.com/get-started/overview/#:~:text=The%20Docker%20daemon%20(%20dockerd%20)%20listens,daemons%20to%20manage%20Docker%20services.
+https://docs.docker.com/get-started/overview/#:~:text=The%20Docker%20daemon%20(%20dockerd%20)%20listens,daemons%20to%20manage%20Docker%20services.
+
+Funcx is installed: 
+https://github.com/funcx-faas/funcX
 
 
 ```
