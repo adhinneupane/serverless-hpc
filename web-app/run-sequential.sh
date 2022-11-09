@@ -1,7 +1,7 @@
 #!/bin/bash
 
 tmp_file=$(mktemp /tmp/file.XXX)
-for scripts in /Users/admin/masters-project/web-app/tmp/*; do
+for scripts in /Users/admin/project-defense/serverless-hpc/web-app/tmp/*; do
    sh $scripts &
    PID="$!"
    echo "$PID:$scripts" >> $tmp_file

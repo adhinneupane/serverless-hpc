@@ -8,12 +8,38 @@ function pop() {
 }
 
 function invokeLambda(){
-    var concurrencyConfig = document.getElementById('concurrencyOptions').value
-    console.log(concurrencyConfig)
+    var numberoffunctions = 1
+    console.log(numberoffunctions)
     alert(concurrencyConfig)
     data = {
         "function": "machineLearning",
-        "concurrency": concurrencyConfig
+        "concurrency": 1
+    }
+    console.log(data)
+    
+fetch('http://localhost:3000/aws-execute-single',
+{
+    headers: {
+        "Content-Type": "application/json"
+      },
+  method: "POST",
+  body: JSON.stringify(data)
+}
+)
+.then(function(response) {
+return response;
+})
+.then(console.log("here"));    
+}
+
+
+function invokeSingleLambda(){
+    var numberoffunctions = document.getElementById('concurrencyOptions').value
+    console.log(numberoffunctions)
+    alert(numberoffunctions)
+    data = {
+        "function": "machineLearning",
+        "concurrency": numberoffunctions
     }
     console.log(data)
     
@@ -32,9 +58,8 @@ return response;
 .then(console.log("here"));    
 }
 
-var button = $('#execute')
-
 window.onload = function() {
-var js = document.getElementById('execute').addEventListener('click',invokeLambda)
-console.log(js)
+var parallelLambda = document.getElementById('execute').addEventListener('click',invokeLambda)
+console.log(parallelLambda)
+var singleLambda = document.createProcessingInstruction('').addEventListener('click',invokeSingleLambda)
 }

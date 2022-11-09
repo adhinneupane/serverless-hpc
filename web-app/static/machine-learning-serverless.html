@@ -35,63 +35,49 @@
     <!-- Custom styles for this template -->
     <link href="cover.css" rel="stylesheet">
   </head>
+
   <body class="d-flex h-100 text-center text-white" style="background-color:rgb(255, 255, 255)">
 
-  <header class="mb-auto">
-  <div>
-  </div>
-  </header>
-
   <nav class="nav nav-masthead justify-content-center float-md-end">
-    <h3 class="float-md-start mb-0" style="padding-top: 20px;">Serverless HPC FaaS for Machine Learning</h3>
+    <h3 class="float-md-start mb-0" style="padding-top: 20px; color:black"> <p> Serverless HPC FaaS for Machine Learning</p></h3>
   <nav>
 
-    <div style=" margin-top:20px;height: 800px; width:1200px; padding-left: 0px;">
-      <img src="architecture-ml.gif" style="max-width: 100%; max-height: 100%">    
-  </div>
-
+<div style="text-align: center; margin-top: 30px; margin-left: 20px; margin-right: 40px;">
+  <zero-md src="Abstract.MD"></zero-md>
+</div>
+  
 <table>
 <tr>
+  <!-- tf dataset image and information -->
   <td style="padding-bottom: 200px; margin: bottom 500px;">
+    <div style="height: 200px; width:700px; margin-left: 300px;">
 
-
-    <div style="height: 200px; width:700px; margin-left: 200px;">
-
-      <img src="dataset-cover.png" style="max-width: 100%; max-height: 100%">
+      <img src="dataset-cover.png" style="max-width: 100%; max-height: 100%; ">
     <div>
     </div>
-      <h4 style="padding-left: 20px;"> <p>
+      <h4 style="padding-left: 20px; font-style: italic; color:black"> <p>
         Trains a neural network model to classify 1000 images and return object category:
       </p></h4>
-        <ul>
-            Parallel Processing: enabled
-        </ul>
-        <ul>
-            Concurrent Executions: 5
-        </ul>
-        <ul>
-            Scaling: Horizontal
-        </ul>
-        <ul>
-            Deployment configurations
-        </ul>
-            <ul class="h5">
-                Memory: 3008 MB 
-            </ul>
-            <ul class="h5">
-                Timeout: 10 minutes
-            </ul>
-            <ul class="h5">
-                Ephemeral Storage: 1024 MB 
-            </ul>
-        </ul>
-   
+      <zero-md src="table.MD">
+      </zero-md>
 
+      <li>
+        <ul>
+          Examine and understand data
+        </ul>
+        <ul>
+          Build an input pipeline
+        </ul> 
+        <ul>
+          Train the model
+        </ul>
+        <ul>
+          Test, examine and improve the model
+        </ul>
+      </li>
   </td>
   <div style="height: 100px; width:10px">
   </div>
-  <td style="padding-left: 200px">
-  </td>
 </tr>
 </table>
 
@@ -99,152 +85,146 @@
 src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
 </script>
 
-<script type="text/javascript">
-  function s3upload() {
-     var files = document.getElementById('fileUpload').files;
-     if (files) 
-     {
-      console.log( files)
-      for (let i = 0; i <= files.length-1; i++){
-       var file = files[i];
-       var fileName = file.name;
-       var filePath = 'my-first-bucket-path/' + fileName;
-       var fileUrl = 'https://' + bucketRegion + '.amazonaws.com/my-    first-bucket/' +  filePath;
-       s3.upload({
-          Key: filePath,
-          Body: file,
-          ACL: 'public-read'
-          }, function(err, data) {
-          if(err) {
-          reject('error');
-          }
-          alert('Successfully Uploaded!');
-          }).on('httpUploadProgress', function (progress) {
-          var uploaded = parseInt((progress.loaded * 100) / progress.total);
-          $("progress").attr('value', uploaded);
-        });
-     }
-  };
-      }
 
-  </script>
+<div style="text-align: left;">
 
-<div style="background-color: white;">
+<!-- Lightweight client-side loader that feature-detects and load polyfills only when necessary -->
+<script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2/webcomponents-loader.min.js"></script>
 
-  <canvas id="myChart2" style="width:100%;max-width:700px;margin-left: 300px; margin-top: 500px;">
-  </canvas>
+<!-- Load the element definition -->
+<script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@1/src/zero-md.min.js"></script>
+
+<!-- Simply set the `src` attribute to your MD file and win -->
+<zero-md src="Code.MD"></zero-md>
+
+</div>
 
 
-
-<script>
-    var xValues = ['workload1ssd','workload2','workload3','workload4','workload5'];
-
-    new Chart("myChart2", {
-      type: "bar",
-      data: {
-        labels: xValues,
-        datasets: [{
-          data: [45,43,42,42,14],
-          borderColor: "green",
-          backgroundColor: [
-                    'rgba(46, 255, 104, 0.5)',
-                    'rgba(46, 255, 104, 0.5)',
-                    'rgba(46, 255, 104, 0.5)',
-                    'rgba(46, 255, 104, 0.5)',
-                    'rgba(46, 255, 104, 0.5)',
-                    'rgba(46, 255, 104, 0.5)',
-                    'rgba(46, 255, 104, 0.5)'
-                ],
-          fill: false
-        },{
-          data: [109,109,110,110,109],
-          borderColor: "red",
-          backgroundColor: [
-                    'rgba(255, 99, 132, 0.5)',
-                    'rgba(255, 99, 132, 0.5)',
-                    'rgba(255, 99, 132, 0.5)',
-                    'rgba(255, 99, 132, 0.5)',
-                    'rgba(255, 99, 132, 0.5)',
-                    'rgba(255, 99, 132, 0.5)',
-                    'rgba(255, 99, 132, 0.5)',
-                ],
-          fill: false
-        }]
-      },
-      options: {
-        legend: {display: false},
-        title: {
-          display: true,
-          text: "Parallel processing in Serverless vs Standalone Node"
-        }
-      }
-    });
-
+<table>
+  <tr>
+      <td>
+        <canvas id="myChart2" style="margin-left: 200px; margin-top:100px; height: 200px; width: 300px;">
+        </canvas>
+      <script>
+          var xValues = ['workload1','workload2','workload3','workload4','workload5'];
+      
+          new Chart("myChart2", {
+            type: "bar",
+            data: {
+              labels: xValues,
+              datasets: [{
+                data: [45,43,42,42,14],
+                borderColor: "green",
+                backgroundColor: [
+                          'rgba(46, 255, 104, 0.5)',
+                          'rgba(46, 255, 104, 0.5)',
+                          'rgba(46, 255, 104, 0.5)',
+                          'rgba(46, 255, 104, 0.5)',
+                          'rgba(46, 255, 104, 0.5)',
+                          'rgba(46, 255, 104, 0.5)',
+                          'rgba(46, 255, 104, 0.5)'
+                      ],
+                fill: false
+              },{
+                data: [109,109,110,110,109],
+                borderColor: "red",
+                backgroundColor: [
+                          'rgba(255, 99, 132, 0.5)',
+                          'rgba(255, 99, 132, 0.5)',
+                          'rgba(255, 99, 132, 0.5)',
+                          'rgba(255, 99, 132, 0.5)',
+                          'rgba(255, 99, 132, 0.5)',
+                          'rgba(255, 99, 132, 0.5)',
+                          'rgba(255, 99, 132, 0.5)',
+                      ],
+                fill: false
+              }]
+            },
+            options: {
+              legend: {display: false},
+              title: {
+                display: true,
+                text: "Parallel processing in Serverless vs Standalone Node"
+              }
+            }
+          });
+      
       </script>
+      </td>
 
-newchange
-</div>
+      <tr>
+        <td>
+            <canvas id="myChart"  style="margin-left: 200px; margin-top:100px; height: 200px; width: 300px;"></canvas>
+            <script>
+          var xValues = [10,50,100,500,1000,3000];
+          
+          new Chart("myChart", {
+            type: "bar",
+            data: {
+              labels: xValues,
+              datasets: [{
+                data: [22.39,34.3,45.41,84.6,92,283],
+                borderColor: "green",
+                backgroundColor: [
+                          'rgba(46, 255, 104, 0.5)',
+                          'rgba(46, 255, 104, 0.5)',
+                          'rgba(46, 255, 104, 0.5)',
+                          'rgba(46, 255, 104, 0.5)',
+                          'rgba(46, 255, 104, 0.5)',
+                          'rgba(46, 255, 104, 0.5)',
+                          'rgba(46, 255, 104, 0.5)'
+                      ],
+                fill: false
+              },{
+                data: [28.5,29.4,32.5,56.6,93.71,303],
+                borderColor: "red",
+                backgroundColor: [
+                          'rgba(255, 99, 132, 0.5)',
+                          'rgba(255, 99, 132, 0.5)',
+                          'rgba(255, 99, 132, 0.5)',
+                          'rgba(255, 99, 132, 0.5)',
+                          'rgba(255, 99, 132, 0.5)',
+                          'rgba(255, 99, 132, 0.5)',
+                          'rgba(255, 99, 132, 0.5)',
+                      ],
+                fill: false
+              }]
+            },
+            options: {
+              legend: {display: false},
+              title: {
+                display: true,
+                text: "Non Scalable Serverless vs Standalone Node"
+              }
+            }
+          });
+          
+            </script>
+          
 
-<div style="margin-top: 500px;"  style="background-color: white;">
+        </td>
+      </tr>
 
-  <canvas id="myChart" style="width:100%;max-width:700px;margin-left: 300px;"></canvas>
+  </tr>
+</table>
 
-  <script>
-var xValues = [10,50,100,500,1000,3000];
-
-new Chart("myChart", {
-  type: "bar",
-  data: {
-    labels: xValues,
-    datasets: [{
-      data: [22.39,34.3,45.41,84.6,92,283],
-      borderColor: "green",
-      backgroundColor: [
-                'rgba(46, 255, 104, 0.5)',
-                'rgba(46, 255, 104, 0.5)',
-                'rgba(46, 255, 104, 0.5)',
-                'rgba(46, 255, 104, 0.5)',
-                'rgba(46, 255, 104, 0.5)',
-                'rgba(46, 255, 104, 0.5)',
-                'rgba(46, 255, 104, 0.5)'
-            ],
-      fill: false
-    },{
-      data: [28.5,29.4,32.5,56.6,93.71,303],
-      borderColor: "red",
-      backgroundColor: [
-                'rgba(255, 99, 132, 0.5)',
-                'rgba(255, 99, 132, 0.5)',
-                'rgba(255, 99, 132, 0.5)',
-                'rgba(255, 99, 132, 0.5)',
-                'rgba(255, 99, 132, 0.5)',
-                'rgba(255, 99, 132, 0.5)',
-                'rgba(255, 99, 132, 0.5)',
-            ],
-      fill: false
-    }]
-  },
-  options: {
-    legend: {display: false},
-    title: {
-      display: true,
-      text: "Non Scalable Serverless vs Standalone Node"
-    }
-  }
-});
-
-  </script>
-
-</div>
-
-
-<h3 style="margin-top:500px"> Worlkload Configuration</h3>
-<div style="height: 600px; width:500px; margin-left: 450px;">
-    <select style="text-align: center;" id="concurrencyOptions" class="form-select" aria-label="Default select example">
+  <h3 style="margin-top:100px; color:black;">Non Scalable Configuration</h3>
+  <div style="height: 100px; width:500px; margin-left: 450px;">
+      <select style="text-align: center;" id="nonconcurrentvalues" class="form-select">
+          <option selected>1000</option>
+        </select>
+      <div>
+          <button id="executesingle" style="margin-top: 10px;" type="button" class="btn btn-primary">Execute</button>
+      </div>
+  </div>
+      </td>
+<h3 style="margin-top:100px; color:black;"> Scalable Configuration</h3>
+<div style="height: 100px; width:500px; margin-left: 450px;">
+    <select style="text-align: center;" id="concurrencyOptions" class="form-select">
         <option selected>1000</option>
       </select>
     <div>
-        <button id="submit" style="margin-top: 10px;" type="button" class="btn btn-primary">Execute</button>
+        <button id="execute" style="margin-top: 10px;" type="button" class="btn btn-primary">Execute</button>
     </div>
 </div>
 
