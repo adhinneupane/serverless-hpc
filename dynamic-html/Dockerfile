@@ -15,13 +15,8 @@ RUN apk add --update py-pip
 RUN pip install numpy
 RUN pip install matplotlib
 RUN pip install pandas
-
-COPY Inspector.py ./Inspector.py
-
-COPY pylab.py ./pylab.py
-
-COPY six.py ./six.py
-
-COPY cycler.py ./cycler.py
+RUN pip install jinja2
 
 COPY action.py ./action.py
+
+COPY template.html /.template.html

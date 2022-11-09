@@ -107,66 +107,7 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
 <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.24.min.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
-<div style="background-color: white;">
 
-  <div style="color:black">
-Some text here
-  </div>
-
-
-<!-- graph 1 -->
-<canvas id="myChart" style="width:100%;max-width:700px;margin-left: 300px;"></canvas>
-  <script>
-var xValues = [10,50,100,500,1000,3000];
-new Chart("myChart", {
-  type: "bar",
-  data: {
-    labels: xValues,
-    datasets: [{
-      data: [22.39,34.3,45.41,84.6,92,283],
-      borderColor: "green",
-      backgroundColor: [
-                'rgba(46, 255, 104, 0.5)',
-                'rgba(46, 255, 104, 0.5)',
-                'rgba(46, 255, 104, 0.5)',
-                'rgba(46, 255, 104, 0.5)',
-                'rgba(46, 255, 104, 0.5)',
-                'rgba(46, 255, 104, 0.5)',
-                'rgba(46, 255, 104, 0.5)'
-            ],
-      fill: false
-    },{
-      data: [28.5,29.4,32.5,56.6,93.71,303],
-      borderColor: "red",
-      backgroundColor: [
-                'rgba(255, 99, 132, 0.5)',
-                'rgba(255, 99, 132, 0.5)',
-                'rgba(255, 99, 132, 0.5)',
-                'rgba(255, 99, 132, 0.5)',
-                'rgba(255, 99, 132, 0.5)',
-                'rgba(255, 99, 132, 0.5)',
-                'rgba(255, 99, 132, 0.5)',
-            ],
-      fill: false
-    }]
-  },
-  options: {
-    legend: {display: false},
-    title: {
-      display: true,
-      text: "Non Scalable Serverless vs Standalone Node"
-    }
-  }
-});
-
-  </script>
-
-  <div style="color:black">
-  some text here
-  </div>
-
-
-</div>
 
 <div>
 

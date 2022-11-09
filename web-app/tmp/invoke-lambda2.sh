@@ -1,5 +1,5 @@
 # !/bin/bash
-export AWS_PROFILE=lab
+export AWS_PROFILE=personal
 export AWS_REGION=us-east-1
 
 
@@ -11,7 +11,7 @@ TAIL='}'
 
 echo $BASE$RANGE$TAIL
 
-aws lambda invoke --function-name machine-learning-complete \
+aws lambda invoke --function-name tensorflow-inspector-image-classification \
 --cli-binary-format raw-in-base64-out \
 --log-type Tail \
 --payload $BASE$RANGE$TAIL \

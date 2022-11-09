@@ -98,63 +98,70 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
 <zero-md src="Code.MD"></zero-md>
 
 </div>
+<div style="color: black;">
+  Metrics collected by the Saaf Runner
+  <img src="saaf=metrics.png" style="max-height: 500px">
+</div>
 
 
 <table>
   <tr>
       <td>
-        <canvas id="myChart2" style="margin-left: 200px; margin-top:100px; height: 200px; width: 300px;">
-        </canvas>
-      <script>
-          var xValues = ['workload1','workload2','workload3','workload4','workload5'];
-      
-          new Chart("myChart2", {
-            type: "bar",
-            data: {
-              labels: xValues,
-              datasets: [{
-                data: [45,43,42,42,14],
-                borderColor: "green",
-                backgroundColor: [
-                          'rgba(46, 255, 104, 0.5)',
-                          'rgba(46, 255, 104, 0.5)',
-                          'rgba(46, 255, 104, 0.5)',
-                          'rgba(46, 255, 104, 0.5)',
-                          'rgba(46, 255, 104, 0.5)',
-                          'rgba(46, 255, 104, 0.5)',
-                          'rgba(46, 255, 104, 0.5)'
-                      ],
-                fill: false
-              },{
-                data: [109,109,110,110,109],
-                borderColor: "red",
-                backgroundColor: [
-                          'rgba(255, 99, 132, 0.5)',
-                          'rgba(255, 99, 132, 0.5)',
-                          'rgba(255, 99, 132, 0.5)',
-                          'rgba(255, 99, 132, 0.5)',
-                          'rgba(255, 99, 132, 0.5)',
-                          'rgba(255, 99, 132, 0.5)',
-                          'rgba(255, 99, 132, 0.5)',
-                      ],
-                fill: false
-              }]
-            },
-            options: {
-              legend: {display: false},
-              title: {
-                display: true,
-                text: "Parallel processing in Serverless vs Standalone Node"
+        <div style="margin-left: 150px; max-width: 700px;">
+          <canvas id="myChart2" style="margin-left: 200px; margin-top:100px; height: 200px; width: 400px;">
+          </canvas>
+          <script>
+            var xValues = ['workload1','workload2','workload3','workload4','workload5'];
+        
+            new Chart("myChart2", {
+              type: "bar",
+              data: {
+                labels: xValues,
+                datasets: [{
+                  data: [45,43,42,42,14],
+                  borderColor: "green",
+                  backgroundColor: [
+                            'rgba(46, 255, 104, 0.5)',
+                            'rgba(46, 255, 104, 0.5)',
+                            'rgba(46, 255, 104, 0.5)',
+                            'rgba(46, 255, 104, 0.5)',
+                            'rgba(46, 255, 104, 0.5)',
+                            'rgba(46, 255, 104, 0.5)',
+                            'rgba(46, 255, 104, 0.5)'
+                        ],
+                  fill: false
+                },{
+                  data: [109,109,110,110,109],
+                  borderColor: "red",
+                  backgroundColor: [
+                            'rgba(255, 99, 132, 0.5)',
+                            'rgba(255, 99, 132, 0.5)',
+                            'rgba(255, 99, 132, 0.5)',
+                            'rgba(255, 99, 132, 0.5)',
+                            'rgba(255, 99, 132, 0.5)',
+                            'rgba(255, 99, 132, 0.5)',
+                            'rgba(255, 99, 132, 0.5)',
+                        ],
+                  fill: false
+                }]
+              },
+              options: {
+                legend: {display: false},
+                title: {
+                  display: true,
+                  text: "Parallel processing in Serverless vs Standalone Node"
+                }
               }
-            }
-          });
-      
-      </script>
+            });
+        
+        </script>
+        </div>
       </td>
-
+  </tr>
       <tr>
         <td>
-            <canvas id="myChart"  style="margin-left: 200px; margin-top:100px; height: 200px; width: 300px;"></canvas>
+          <div style="margin-left:150px; max-width: 700px;"> 
+            <canvas id="myChart"  style="margin-left: 200px; margin-top:100px; height: 200px; width: 400px;"></canvas>
             <script>
           var xValues = [10,50,100,500,1000,3000];
           
@@ -198,14 +205,13 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
               }
             }
           });
-          
             </script>
+          </div>
+
           
 
         </td>
       </tr>
-
-  </tr>
 </table>
 
   <h3 style="margin-top:100px; color:black;">Non Scalable Configuration</h3>

@@ -9,7 +9,7 @@ RANGE=$START',"end":'$END
 echo $RANGE
 TAIL='}'
 
-aws lambda invoke --function-name machine-learning-complete \
+aws lambda invoke --function-name tensorflow-inspector-image-classification \
 --cli-binary-format raw-in-base64-out \
 --log-type Tail \
 --payload $BASE$RANGE$TAIL \

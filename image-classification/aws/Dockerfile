@@ -26,6 +26,8 @@ RUN yum -y install tar gzip zlib freetype-devel \
 
 COPY requirements.txt ./
 
+COPY Inspector.py ./Inspector.py
+
 
 RUN python3.8 -m pip install -r requirements.txt
 # Replace Pillow with Pillow-SIMD to take advantage of AVX2
@@ -34,4 +36,4 @@ RUN pip uninstall -y pillow && CC="cc -mavx2" pip install -U --force-reinstall p
 COPY app.py ./app.py
 
 # Set the CMD to your handler
-ENTRYPOINT [ "python3.8","app.py" ]
+CMD [ "app.lambda_handler" ]

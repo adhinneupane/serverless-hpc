@@ -110,7 +110,6 @@ def classify(number):
 def lambda_handler(event,context):
   for x in range(event.get('start'),event.get('end')):
     classify(x)
-  inspector.addAttribute("message", "Hello " + request['name'] + "!")
   print("result",inspector.finish() ) 
 
 
