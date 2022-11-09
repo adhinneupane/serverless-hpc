@@ -2,8 +2,7 @@
 
 DOCKER_USERNAME=adhinneupane
 
-
-cd ../
+cd ../data-processing
 
 docker build -t python3action:web-application-rendering .
 

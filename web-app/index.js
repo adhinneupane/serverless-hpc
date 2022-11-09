@@ -72,6 +72,4 @@ app.get('/web-apps', function(req,res){
     res.sendFile('/Users/admin/project-defense/serverless-hpc/web-app/static/web-apps.html')
 })
 
-
-
 app.listen(3000);
