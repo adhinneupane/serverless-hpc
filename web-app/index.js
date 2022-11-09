@@ -49,7 +49,7 @@ app.post('/execute-openwhisk', function(req,res){
       console.log(req.body)
       const funcPlatform = ((req.body).numberofImages)
       shell.exec('./execute-openwhisk.sh')
-      res.sendFile('/Users/admin/project-defense/serverless-hpc/web-app/response.html')
+      res.sendFile('/Users/admin/project-defense/serverless-hpc/web-app/static/response.html')
 })
 
 app.get('/pi-experiment', function (req, res) {
