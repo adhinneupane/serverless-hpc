@@ -3,6 +3,12 @@ import json
 import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
+from Inspector import * 
+
+inspector = Inspector()
+inspector.inspectContainer()
+inspector.inspectCPU()
+inspector.addTimeStamp("frameworkRuntime")
 
 fashion_mnist = tf.keras.datasets.fashion_mnist
 (train_images, train_labels), (test_images, test_labels) = fashion_mnist.load_data()
@@ -104,4 +110,8 @@ def classify(number):
 def lambda_handler(event,context):
   for x in range(event.get('start'),event.get('end')):
     classify(x)
+  inspector.addAttribute("message", "Hello " + request['name'] + "!")
+  print("result",inspector.finish() ) 
+
+
 

@@ -3,8 +3,8 @@ export AWS_PROFILE=lab
 export AWS_REGION=us-east-1
 
 BASE='{"start":'
-START=$1
-END=$2
+START=100
+END=200
 RANGE=$START',"end":'$END
 echo $RANGE
 TAIL='}'
