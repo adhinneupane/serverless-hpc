@@ -17,21 +17,77 @@
 #
 -->
 
-# OpenWhisk Standalone Server
-
-```bash
-$ ./gradlew :core:standalone:build
-```
+# Serve Web pages with Openwhisk Actions
 
 OpenWhisk standalone server is meant to run a simple OpenWhisk server for local development and test purposes. It can be
 executed as a normal java application from command line.
 
-This should start the OpenWhisk server on port 3233 by default and launch a Playground UI at port 3232.
+```bash
+$ ./gradlew :core:standalone:build
+```
+Workload:
+Generates dynamic html as webpages that can be returned to web applications. 
 
-The Playground UI can be used to try out simple actions. To make use of all OpenWhisk features.
+```
 
-This server by default uses a memory based store and does not depend on any other external service like Kafka and CouchDB.
-It only needs Docker and Java to for running.
+from datetime import datetime                                                   
+from random import sample  
+from os import path
+from time import time                                                           
+import os
+import json
+from urllib import request
+from jinja2 import Template
+
+sampleobj = {
+    "username":"ashutosh", 
+    "random_len":1000
+}
+
+prehtml = """
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Randomly generated data.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style type="text/css">
+      .container {
+        max-width: 500px;
+        padding-top: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p>Welcome username!</p>
+      <p>Data generated at: cur_time!</p>
+      <p>Requested random numbers:</p>
+      <ul>
+        {% for n in random_numbers %}
+        <li>{{n}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </body>
+</html>
+"""
+
+def main(params):
+    # start timing
+    name = sampleobj.get('username')
+    size = sampleobj.get('random_len')
+    cur_time = datetime.now()
+    random_numbers = sample(range(0, 1000000), size)
+    template = Template(prehtml)
+    html = template.render(username = name, cur_time = cur_time, random_numbers = random_numbers)
+    print(html)
+    return {
+        "result": html
+    }
+
+
+```
 
 
 ```
