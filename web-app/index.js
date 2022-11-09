@@ -27,6 +27,7 @@ app.post('/aws-execute', function(req,res){
       console.log(req.body)
       const concurrency = ((req.body).concurrency)
       shell.exec('./run-sequential.sh')
+      console.log("this process has now completed")
       res.status(200)
 })
 
@@ -38,6 +39,7 @@ app.post('/aws-execute-single', function(req,res){
       console.log(req.body)
       const concurrency = ((req.body).numberoffunctions)
       shell.exec('./run-single.sh')
+      console.log("this process has now completed")
       res.status(200)
 })
 

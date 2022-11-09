@@ -1,10 +1,10 @@
 # !/bin/bash
-export AWS_PROFILE=lab
+export AWS_PROFILE=personal
 export AWS_REGION=us-east-1
 
 BASE='{"start":'
 START=1
-END=1000
+END=2
 RANGE=$START',"end":'$END
 TAIL='}'
 

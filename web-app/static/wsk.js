@@ -23,5 +23,12 @@ fetch('http://localhost:3000/execute-openwhisk',
 .then(function(response) {
 return response;
 })
-.then(console.log("wsk-invoked"));    
+.then(
+    document.getElementById('results').appendChild(link))
 }
+
+let link = document.createElement("a");
+link.innerHTML = "http://localhost:3000/response.html";
+link.href = "http://localhost:3000/response.html"
+
+

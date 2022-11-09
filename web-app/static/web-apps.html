@@ -86,63 +86,14 @@
 </tr>
 </table>
 
-<div style="height: 200px; width: 900px; background-color:white">
-
+<div style="margin-left: 500px;" id="results">
+  Results: 
 </div>
-
-
-
-
-
-
-<script type="text/javascript">
-  function s3upload() {
-     var files = document.getElementById('fileUpload').files;
-     if (files) 
-     {
-       var file = files[0];
-       var fileName = file.name;
-       var filePath = 'my-first-bucket-path/' + fileName;
-       var fileUrl = 'https://' + bucketRegion + '.amazonaws.com/my-    first-bucket/' +  filePath;
-       s3.upload({
-          Key: filePath,
-          Body: file,
-          ACL: 'public-read'
-          }, function(err, data) {
-          if(err) {
-          reject('error');
-          }
-          alert('Successfully Uploaded!');
-          }).on('httpUploadProgress', function (progress) {
-          var uploaded = parseInt((progress.loaded * 100) / progress.total);
-          $("progress").attr('value', uploaded);
-        });
-     }
-  };
-  </script>
-
-<script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.24.min.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script type="text/javascript">
-//Bucket Configurations
-var bucketName = "tensorflow-image-collection";
-var bucketRegion = "us-east-1";
-var IdentityPoolId = "us-east-1:262b0c0e-3198-41cf-98b4-430ba812c08a";
-
- AWS.config.update({
-                region: bucketRegion,
-                credentials: new AWS.CognitoIdentityCredentials({
-                    IdentityPoolId: IdentityPoolId
-                })
-            });
-
-            var s3 = new AWS.S3({
-                apiVersion: '2006-03-01',
-                params: {Bucket: bucketName}
-        });
-</script>
 
 </div>
+
+
 
 <script src="wsk.js"></script>
 
