@@ -7,13 +7,13 @@
         "Description": "",
         "Timeout": 303,
         "MemorySize": 2048,
-        "LastModified": "2022-11-09T17:05:58.000+0000",
+        "LastModified": "2022-11-10T17:19:32.000+0000",
         "CodeSha256": "a5160cab65a68c95775a4f383858521d5d33b9d1efc8ce79f880d547f4cc8137",
         "Version": "$LATEST",
         "TracingConfig": {
             "Mode": "PassThrough"
         },
-        "RevisionId": "dce569ce-e89b-43c8-b704-6231cf10f669",
+        "RevisionId": "e4ea5bdd-7b49-4a88-a104-172fdc06ba02",
         "State": "Active",
         "LastUpdateStatus": "Successful",
         "PackageType": "Image",
@@ -22,7 +22,7 @@
             "x86_64"
         ],
         "EphemeralStorage": {
-            "Size": 512
+            "Size": 3008
         }
     },
     "Code": {
