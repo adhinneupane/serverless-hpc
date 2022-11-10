@@ -2,7 +2,7 @@
 
 DOCKER_USERNAME=adhinneupane
 
-# cd ../dynamic-html
+cd ../dynamic-html
 
 # docker build -t python3action:web-application-rendering .
 

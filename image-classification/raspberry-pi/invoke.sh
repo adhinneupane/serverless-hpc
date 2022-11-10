@@ -1,3 +1,6 @@
+export AWS_PROFILE='personal'
+export AWS_REGION='us-east-1'
+
 BASE='{"start":'
 START=1
 END=200
