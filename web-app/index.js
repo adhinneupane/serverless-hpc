@@ -27,7 +27,6 @@ app.post('/aws-execute', function(req,res){
       console.log(req.body)
       const concurrency = ((req.body).concurrency)
       shell.exec('./run-sequential.sh')
-      console.log("this process has now completed")
       res.status(200)
 })
 
@@ -39,7 +38,9 @@ app.post('/aws-execute-single', function(req,res){
       console.log(req.body)
       const concurrency = ((req.body).numberoffunctions)
       shell.exec('./run-single.sh')
-      console.log("this process has now completed")
+      shell.exec('./get-lambda-info.sh')
+      res.append('state','completed')
+      res.sendFile('/Users/admin/project-defense/serverless-hpc/web-app/static/lambda-info.MD')
       res.status(200)
 })
 
@@ -51,7 +52,7 @@ app.post('/execute-openwhisk', function(req,res){
       console.log(req.body)
       const funcPlatform = ((req.body).numberofImages)
       shell.exec('./execute-openwhisk.sh')
-      res.sendFile('/Users/admin/project-defense/serverless-hpc/web-app/static/response.html')
+      res.sendFile('/Users/admin/project-defense/serverless-hpc/web-app/static/response2.html')
 })
 
 app.get('/pi-experiment', function (req, res) {

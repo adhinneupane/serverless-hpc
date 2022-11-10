@@ -28,8 +28,8 @@ prehtml = """
   </head>
   <body>
     <div class="container">
-      <p>Welcome username!</p>
-      <p>Data generated at: cur_time!</p>
+      <p>Welcome adhinneupane!</p>
+      <p>Data generated at: 10th November!</p>
       <p>Requested random numbers:</p>
       <ul>
         {% for n in random_numbers %}

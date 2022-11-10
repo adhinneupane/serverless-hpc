@@ -217,12 +217,26 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
   <h3 style="margin-top:100px; color:black;">Non Scalable Configuration</h3>
   <div style="height: 100px; width:500px; margin-left: 450px;">
       <select style="text-align: center;" id="nonconcurrentvalues" class="form-select">
-          <option selected>1000</option>
+          <option selected>200</option>
         </select>
       <div>
           <button id="executesingle" style="margin-top: 10px;" type="button" class="btn btn-primary">Execute</button>
       </div>
+      <div id="nonscalableresult">
+
+      </div>
+      <div id="nonscalableconfiguration">
+
+      </div>
   </div>
+  <td>
+    <div id="fetchfunctionconfigurations">
+      <div style="margin-top: 90px;">
+       <a href="http://localhost:3000/lambda-info.MD">Configurations of Most Recent Run</a>
+    </div>
+    </div>
+  </td>
+
       </td>
 <h3 style="margin-top:100px; color:black;"> Scalable Configuration</h3>
 <div style="height: 100px; width:500px; margin-left: 450px;">
@@ -230,7 +244,11 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
         <option selected>1000</option>
       </select>
     <div>
-        <button id="execute" style="margin-top: 10px;" type="button" class="btn btn-primary">Execute</button>
+        <button id="execute" style="text-align:left; margin-top: 10px;" type="button" class="btn btn-primary">Execute</button>
+    </div>
+    <div id="scalableresult">
+        
+
     </div>
 </div>
 
