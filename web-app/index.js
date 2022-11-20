@@ -30,6 +30,11 @@ app.post('/aws-execute', function(req,res){
       res.sendFile('/Users/admin/masters-project/web-app/static/aws-response.txt')
 })
 
+app.post('/aws-execute-single', function(req,res){
+  shell.exec('./run-single.sh | tee /Users/admin/masters-project/web-app/static/aws-response.txt')
+  res.sendFile('/Users/admin/masters-project/web-app/static/aws-response.txt')
+})
+
 
 //not sure what "extended: false" is for
 app.use(bodyParser.json());
