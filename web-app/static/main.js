@@ -6,12 +6,12 @@ function pop() {
 }
 
 function invokeLambda(){
-    var numberoffunctions = 1
+    var numberoffunctions = 5
     console.log(numberoffunctions)
     alert('Number of Functions:5 \n Workload: 1000 images \n https://us-east-1.console.aws.amazon.com/lambda/home?region=us-east-1#/functions/tensorflow-inspector-image-classification?newFunction=true&tab=testing \n Proceed with execution?')
     data = {
         "function": "machineLearning",
-        "concurrency": 1
+        "concurrency": 5
     }
     console.log(data)
     

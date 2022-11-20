@@ -14,7 +14,7 @@ const { type } = require('os');
 app.use(express.static(path.join(__dirname, '/static/')))
 
 app.get('/home', function (req, res) {
-    res.sendFile('/Users/admin/project-defense/serverless-hpc/web-app/static/home.html')
+    res.sendFile('/Users/admin/masters-project/web-app/static/home.html')
 })
 
 var router = express.Router(mergeparams=true)
@@ -26,22 +26,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.post('/aws-execute', function(req,res){
       console.log(req.body)
       const concurrency = ((req.body).concurrency)
-      shell.exec('./run-sequential.sh')
-      res.status(200)
-})
-
-//not sure what "extended: false" is for
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-
-app.post('/aws-execute-single', function(req,res){
-      console.log(req.body)
-      const concurrency = ((req.body).numberoffunctions)
-      shell.exec('./run-single.sh')
-      shell.exec('./get-lambda-info.sh')
-      res.append('state','completed')
-      res.sendFile('/Users/admin/project-defense/serverless-hpc/web-app/static/lambda-info.MD')
-      res.status(200)
+      shell.exec('./run-sequential.sh | tee /Users/admin/masters-project/web-app/static/aws-response.txt')
+      res.sendFile('/Users/admin/masters-project/web-app/static/aws-response.txt')
 })
 
 //not sure what "extended: false" is for
@@ -52,31 +38,27 @@ app.post('/execute-openwhisk', function(req,res){
       console.log(req.body)
       const funcPlatform = ((req.body).numberofImages)
       shell.exec('./execute-openwhisk.sh')
-      res.sendFile('/Users/admin/project-defense/serverless-hpc/web-app/static/response2.html')
-})
-
-app.get('/pi-experiment', function (req, res) {
-  res.sendFile('/Users/admin/project-defense/serverless-hpc/web-app/static/pi-experiment.html')
+      res.sendFile('/Users/admin/masters-project/web-app/newFile.html')
 })
 
 app.get('/machine-learning', function (req, res) {
-  res.sendFile('/Users/admin/project-defense/serverless-hpc/web-app/static/machine-learning.html')
+  res.sendFile('/Users/admin/masters-project/web-app/static/machine-learning.html')
 })
 
 app.get('/machine-learning-serverless', function (req, res) {
-  res.sendFile('/Users/admin/project-defense/serverless-hpc/web-app/static/machine-learning-serverless.html')
+  res.sendFile('/Users/admin/masters-project/web-app/static/machine-learning-serverless.html')
 })
 
 app.get('/machine-learning-standalone', function (req, res) {
-  res.sendFile('/Users/admin/project-defense/serverless-hpc/web-app/static/machine-learning-standalone.html')
+  res.sendFile('/Users/admin/masters-project/web-app/static/machine-learning-standalone.html')
 })
 
 app.get('/data-processing', function(req,res){
-    res.sendFile('/Users/admin/project-defense/serverless-hpc/web-app/static/data-processing.html')
+    res.sendFile('/Users/admin/masters-project/web-app/static/data-processing.html')
 })
 
 app.get('/web-apps', function(req,res){
-    res.sendFile('/Users/admin/project-defense/serverless-hpc/web-app/static/web-apps.html')
+    res.sendFile('/Users/admin/masters-project/web-app/static/web-apps.html')
 })
 
 app.listen(3000);
