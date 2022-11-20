@@ -50,6 +50,7 @@ AWS_ACCESS_KEY_ID:<AWS_ACCESS_KEY_ID>
 SECRET_AWS_ACCESS_KEY_ID:<SECRET_AWS_ACCESS_KEY_ID>
 
 ~/.aws/config 
+
 [dev]
 region = <region>
 output = json
