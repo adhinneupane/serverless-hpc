@@ -4,8 +4,8 @@ export AWS_REGION=us-east-1
 
 
 BASE='{"start":'
-START=400
-END=600
+START=600
+END=800
 RANGE=$START',"end":'$END
 TAIL='}'
 

@@ -64,8 +64,8 @@ console.log(singleLambda);
 
 let nonscalableresultLink = document.createElement("a");
 nonscalableresultLink.innerHTML = 'Function Results' 
-nonscalableresultLink.href = "https://us-east-1.console.aws.amazon.com/lambda/home?region=us-east-1#/functions/tensorflow-inspector-image-classification?tab=monitoring";
+nonscalableresultLink.href = "http://localhost:3000/aws-response";
 
 let scalableresultLink = document.createElement("a");
 scalableresultLink.innerHTML = 'Function Results' 
-scalableresultLink.href = "https://us-east-1.console.aws.amazon.com/lambda/home?region=us-east-1#/functions/tensorflow-inspector-image-classification?tab=monitoring";
+scalableresultLink.href = "http://localhost:3000/aws-response";
