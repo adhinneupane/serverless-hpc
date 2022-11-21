@@ -3,9 +3,7 @@
 
 
 **Serverless FaaS (Function as a Service)** 
-Zero wait time, fault tolerant execution of scientific workloads that include popular data processing, classification and computer vision libraries. Both opensource and commercial clouds have been leveraging FaaS capabilities to power microservices and distributed application deployments on cloud. 
-
-With the experimental analysis performed in this project through cloud deployments on Apache Openwhisk and Amazon Web Services (AWS), we gain an insight into real time performance of scientific workloads and their white box behavior in serverless environments. We also simulate a traditional parallel computing architecture that is used in containerized deployments on classical high-performance applications. 
+Zero wait time, fault tolerant execution of scientific workloads that include popular data processing, classification and computer vision libraries.
 
 In the current configuration, we have implemented tensorflow image classification for 1000 images in MNIST library. 
 
@@ -18,8 +16,6 @@ wsk cli 	1.0.0
 docker	20.10.17 
 python	3.8 
 TensorFlow 	2.0
-
-Before running the application, make sure: 
 
 Apache Openwhisk Endpoint is available on your computer. 
 https://github.com/apache/openwhisk#readme
@@ -35,7 +31,6 @@ wsk property set --apihost adobeioruntime.net  --auth  <Your auth code from the 
 ```
 wsk list
 ```
-
 
 AWS / WSK cli installation and configuration is complete. 
 aws-cli: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
