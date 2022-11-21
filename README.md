@@ -22,7 +22,7 @@ https://github.com/apache/openwhisk#readme
 
 ```
 AUTH=<Your UUID>
-APIHOST=adobeioruntime.net 
+APIHOST==<APIHOST> 
 NAMESPACE=<Your namespace>
 ```
 ```
