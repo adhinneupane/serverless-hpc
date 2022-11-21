@@ -8,7 +8,6 @@ Zero wait time, fault tolerant execution of scientific workloads that include po
 In the current configuration, we have implemented tensorflow image classification for 1000 images in MNIST library. 
 
 Requirements: 
-
 AWS account
 aws-cli	2.8.4  
 Apache openwhisk	1.0.0 
@@ -58,9 +57,7 @@ https://docs.docker.com/get-started/overview/#:~:text=The%20Docker%20daemon%20(%
 ```
 ps aux | grep docker 
 ```
-
 <img width="1057" alt="image" src="https://user-images.githubusercontent.com/38281651/202928806-98f26947-8efd-4ed7-beb7-7134f53f5663.png">
-
 
 ```
 cd ../serverless-hpc 
