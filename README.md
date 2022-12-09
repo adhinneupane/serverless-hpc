@@ -1,7 +1,7 @@
 # serverless-hpc
 
 
-**Serverless FaaS (Function as a Service)** 
+**Serverless FaaS for High Performance Computing ** 
 
 High Performance Computing (HPC) workloads such as predicting weather and genome sequencing utilize neural networks and popular machine learning libraries that require computing power and generally run-on coupled nodes that manage their own execution environments. This requires a layered architecture that is always available for exposing supercomputing power shared between different layers to an in house or remote user(s)/endpoint whenever necessary. This results in large waiting queues, unutilized idle times, custom configurations per cluster and ultimately high maintenance costs.  
 
@@ -15,13 +15,13 @@ The repository is not limited to: tensorflow image classification and includes e
 
 Requirements: 
 
-AWS account
-aws-cli	2.8.4  
-Apache openwhisk	1.0.0 
-wsk cli 	1.0.0 
-docker	20.10.17 
-python	3.8 
-TensorFlow 	2.0
+AWS account. \ 
+aws-cli	2.8.4  \
+Apache openwhisk	1.0.0. \ 
+wsk cli 	1.0.0 \ 
+docker	20.10.17 \
+python	3.9 \
+TensorFlow 	2.0 \
 
 Apache Openwhisk Endpoint is available on your computer. 
 
@@ -92,6 +92,8 @@ cd ../serverless-hpc
 npm install body-parser express 
 node index.js
 ```
+
+
 ## Results
 
 <img width="717" alt="image" src="https://user-images.githubusercontent.com/38281651/202928716-c30a769f-ed09-4d49-bdab-a4fe72a3d158.png">
