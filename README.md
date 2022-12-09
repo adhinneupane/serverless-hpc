@@ -71,14 +71,9 @@ cli-binary-format = raw-in-base64-out
 
 They can be used to specify non-global aws environments as well by changing them per file or instance of shell.
 
-use 
-export AWS_PROFILE=<profilename>
-eport AWS_REGION=<yourprofile region>
-
 Make sure aws configure is able to run succesfully. 
 
 AWS CLI version required: 2.0 (Will not work with versions less that <2.0)
-
 
 Docker Daemon is logged in and running. 
 https://docs.docker.com/get-started/overview/#:~:text=The%20Docker%20daemon%20(%20dockerd%20)%20listens,daemons%20to%20manage%20Docker%20services.
