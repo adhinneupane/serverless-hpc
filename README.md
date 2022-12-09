@@ -103,11 +103,12 @@ The same version of above mentioned dev tools and source code was used to ensure
 
 <img width="717" alt="image" src="https://user-images.githubusercontent.com/38281651/202928716-c30a769f-ed09-4d49-bdab-a4fe72a3d158.png">
 
-Performing HPC on a raspberry PI wiht 1GB memory. 
+Performing HPC on a raspberry PI with 1GB memory. 
 
-https://www.youtube.com/watch?v=XEmGgh0gMM4&ab_channel=AdhinNeupane
+[Local Execution] :  [Recording] (https://www.youtube.com/watch?v=XEmGgh0gMM4&ab_channel=AdhinNeupane).
+[Serverless Execution] :  [Recording] (https://www.youtube.com/watch?v=XEmGgh0gMM4&list=TLPQMDkxMjIwMjLyDSlhyBRq0A&index=1&ab_channel=AdhinNeupane)
 
-https://www.youtube.com/watch?v=XEmGgh0gMM4&list=TLPQMDkxMjIwMjLyDSlhyBRq0A&index=1&ab_channel=AdhinNeupane
+
 
 
 
