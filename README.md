@@ -15,9 +15,9 @@ The repository is not limited to: tensorflow image classification and includes e
 
 Requirements: 
 
-AWS account. \ 
+AWS account \ 
 aws-cli	2.8.4  \
-Apache openwhisk	1.0.0. \ 
+Apache openwhisk	1.0.0 \ 
 wsk cli 	1.0.0 \ 
 docker	20.10.17 \
 python	3.9 \
