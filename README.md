@@ -12,12 +12,6 @@ However, HPC infrastructure designed using only FaaS workloads that is available
 We also explore some opensource implementations that stem from this design. 
 
 The repository is not limited to: tensorflow image classification and includes examples for deploying use cases such as data-processing on Apache Openwhisk.
- 
-![image](https://user-images.githubusercontent.com/38281651/206797816-c490b4c8-e04c-4caa-bbdc-1fefc1b69c2a.png)
-
-
-Zero wait time, fault tolerant execution of scientific workloads that include popular data processing, classification and computer vision libraries.
-In the current configuration, we have implemented tensorflow image classification for 1000 images in MNIST library. 
 
 Requirements: 
 
