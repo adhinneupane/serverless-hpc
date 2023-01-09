@@ -3,9 +3,9 @@
 
 Serverless FaaS for High Performance Computing
 
-High Performance Computing (HPC) workloads such as predicting weather and genome sequencing utilize neural networks and popular machine learning libraries that require computing power and generally run-on coupled nodes that manage their own execution environments. This requires a layered architecture that is always available for exposing supercomputing power shared between different layers to an in house or remote user(s)/endpoint whenever necessary. This results in large waiting queues, unutilized idle times, custom configurations per cluster and ultimately high maintenance costs.  
+High Performance Computing (HPC) workloads such as predicting weather and genome sequencing utilize neural networks and popular machine learning libraries that require significant computing power and generally run-on coupled nodes that manage their own execution environments. This requires a layered architecture that is always available for exposing supercomputing power shared between different layers to an in house or remote user(s)/endpoint whenever necessary. This results in large waiting queues, unutilized idle times, custom configurations per cluster and ultimately high maintenance costs.  
 
-Function as a Service (FaaS) has led to optimized cloud architectures that facilitate heavy workloads while keeping minimal idle times, always available and powerful fault tolerant implementations [1] often coupled with pay as you use models. FaaS has been successfully utilized in designing microservices that power modern web-applications that have proliferated commercial and open-source clouds.
+Function as a Service (FaaS) has led to optimized cloud architectures that facilitate heavy workloads while keeping minimal idle times, always available and powerful fault tolerant implementations often coupled with pay as you use models. FaaS has been successfully utilized in designing microservices that power modern web-applications that have proliferated commercial and open-source clouds.
 
 However, HPC infrastructure designed using only FaaS workloads that is available on run time and can perform scientific workloads are limited. In order to explore this area, we design a fully serverless workflow that can allow FaaSification of scientific workloads and evaluate the performance results against a parallel computing setup designed using virtualization technologies. We train and deploy a neural network to classify up to 3000 images of clothing and predict labels with 99% accuracy. 
 
@@ -76,7 +76,6 @@ Make sure aws configure is able to run succesfully.
 AWS CLI version required: 2.0 (Will not work with versions less that <2.0)
 
 Docker Daemon is logged in and running. 
-https://docs.docker.com/get-started/overview/#:~:text=The%20Docker%20daemon%20(%20dockerd%20)%20listens,daemons%20to%20manage%20Docker%20services.
 
 ```
 ps aux | grep docker 
@@ -105,7 +104,8 @@ Performing HPC on a raspberry PI with 1GB memory.
 
 [Serverless Execution](https://www.youtube.com/watch?v=XEmGgh0gMM4&list=TLPQMDkxMjIwMjLyDSlhyBRq0A&index=1&ab_channel=AdhinNeupane)
 
-
+## Author
+Ashutosh Neupane
 
 
 
