@@ -67,7 +67,7 @@ ps aux | grep docker
 
 ```
 cd ../serverless-hpc 
-npm install body-parser express 
+npm install 
 node index.js
 ```
 
