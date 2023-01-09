@@ -1,7 +1,4 @@
-# serverless-hpc
-
-
-Serverless FaaS for High Performance Computing
+# Serverless FaaS for High Performance Computing
 
 High Performance Computing (HPC) workloads such as predicting weather and genome sequencing utilize neural networks and popular machine learning libraries that require significant computing power and generally run-on coupled nodes that manage their own execution environments. This requires a layered architecture that is always available for exposing supercomputing power shared between different layers to an in house or remote user(s)/endpoint whenever necessary. This results in large waiting queues, unutilized idle times, custom configurations per cluster and ultimately high maintenance costs.  
 
@@ -13,7 +10,7 @@ We also explore some opensource implementations that stem from this design.
 
 The repository is not limited to: tensorflow image classification and includes examples for deploying use cases such as data-processing on Apache Openwhisk.
 
-Requirements: 
+## Requirements: 
 
 ```
 AWS account 
@@ -24,11 +21,8 @@ docker	20.10.17
 python	3.9 
 TensorFlow 	2.0 
 ```
-Apache Openwhisk Endpoint is available on your computer. 
 
-https://github.com/apache/openwhisk#readme
-
-Setup WSK Cli 
+### Setup WSK Cli 
 
 ```
 
@@ -42,18 +36,11 @@ NAMESPACE=<YOUR NAMESPACE>
 wsk property set --apihost <YOUR API HOST>  --auth  <Your auth code from the Runtime team>  namespace  <Your namespace from the Runtime team>
 ```
 
-Check installation
-
 ```
 wsk list
 ```
 
-Additional Resources for aws-cli / openwhisk 
-
-aws-cli: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
-wsk-cli: https://github.com/apache/openwhisk-cli
-
-Configure AWS Cli 
+## Setup AWS Cli and Docker
 
 ```
 ~/.aws/credentials
@@ -67,23 +54,25 @@ SECRET_AWS_ACCESS_KEY_ID:<SECRET_AWS_ACCESS_KEY_ID>
 region = <region>
 output = json
 cli-binary-format = raw-in-base64-out
-```
-
-Start Docker 
+``` 
 
 ```
 ps aux | grep docker 
 ```
 
-<img width="1057" alt="image" src="https://user-images.githubusercontent.com/38281651/202928806-98f26947-8efd-4ed7-beb7-7134f53f5663.png">
 
-Deploy node website
+
+## Deploy node website
+
 
 ```
 cd ../serverless-hpc 
 npm install body-parser express 
 node index.js
 ```
+
+<img width="1057" alt="image" src="https://user-images.githubusercontent.com/38281651/202928806-98f26947-8efd-4ed7-beb7-7134f53f5663.png">
+
 
 ## Parallel processing for AWS EC2 instances
 
