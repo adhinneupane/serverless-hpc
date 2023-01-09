@@ -73,15 +73,11 @@ AMI: Linux
  <img width="717" alt="image" src="https://user-images.githubusercontent.com/38281651/202928716-c30a769f-ed09-4d49-bdab-a4fe72a3d158.png">
 </p>
 
-## Remote HPC for devices for Edge computing.
-
-[Standalone Performance](https://www.youtube.com/watch?v=XEmGgh0gMM4&ab_channel=AdhinNeupane)
-[Serverless Execution](https://www.youtube.com/watch?v=XEmGgh0gMM4&list=TLPQMDkxMjIwMjLyDSlhyBRq0A&index=1&ab_channel=AdhinNeupane)
 
 ## Author
 
 Ashutosh Neupane
-adhinneupane2020@gmail.com
+<br>adhinneupane2020@gmail.com</br>
 
 
 
