@@ -28,18 +28,18 @@ Apache Openwhisk Endpoint is available on your computer.
 
 https://github.com/apache/openwhisk#readme
 
-Make sure the openwhisk setup is completed. WSK cli has to be integrated with apache openwhisk using the following configurations. 
+Setup WSK Cli 
 
 ```
 
-AUTH=<Your UUID>
-APIHOST==<APIHOST> 
-NAMESPACE=<Your namespace>
+AUTH=<YOUR UUID>
+APIHOST==<YOUR APIHOST> 
+NAMESPACE=<YOUR NAMESPACE>
 
 ```
 
 ```
-wsk property set --apihost adobeioruntime.net  --auth  <Your auth code from the Runtime team>  namespace  <Your namespace from the Runtime team>
+wsk property set --apihost <YOUR API HOST>  --auth  <Your auth code from the Runtime team>  namespace  <Your namespace from the Runtime team>
 ```
 
 Check installation
@@ -53,7 +53,7 @@ Additional Resources for aws-cli / openwhisk
 aws-cli: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 wsk-cli: https://github.com/apache/openwhisk-cli
 
-Make sure the AWS credentials are setup and configured for global usage.
+Configure AWS Cli 
 
 ```
 ~/.aws/credentials
@@ -69,18 +69,15 @@ output = json
 cli-binary-format = raw-in-base64-out
 ```
 
-They can be used to specify non-global aws environments as well by changing them per file or instance of shell.
-
-Make sure aws configure is able to run succesfully. 
-
-AWS CLI version required: 2.0 (Will not work with versions less that <2.0)
-
-Docker Daemon is logged in and running. 
+Start Docker 
 
 ```
 ps aux | grep docker 
 ```
+
 <img width="1057" alt="image" src="https://user-images.githubusercontent.com/38281651/202928806-98f26947-8efd-4ed7-beb7-7134f53f5663.png">
+
+Deploy node website
 
 ```
 cd ../serverless-hpc 
@@ -88,10 +85,15 @@ npm install body-parser express
 node index.js
 ```
 
-## Setting up the EC2 
+## Parallel processing for AWS EC2 instances
 
 We used a t3.xlarge instance type from AWS With Linux AMI to achieve these results. 
 The same version of above mentioned dev tools and source code was used to ensure minimum difference in runtime executions for each of these files. 
+
+
+# Lambda Function Architecture
+
+Screenshot from 2023-01-08 22-01-21.png
 
 ## Results
 
