@@ -95,7 +95,7 @@ The same version of above mentioned dev tools and source code was used to ensure
 
 
    
-## Remote HPC for devices with low-compute capacity.
+## Remote HPC for devices for Edge computing.
 
 [Standalone Performance](https://www.youtube.com/watch?v=XEmGgh0gMM4&ab_channel=AdhinNeupane)
 
