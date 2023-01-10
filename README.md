@@ -1,13 +1,17 @@
-# Serverless FaaS for High Performance Computing
-
-<p align="center" width="100px" height="100px">
- <img alt="image" src="
-">
+<p align="left" >
+ <img width="150px" height="100px" alt="tensorflow-logo" src="https://user-images.githubusercontent.com/38281651/211432800-90035730-1f34-419d-b1b8-f726b745cb09.png">
+ <img width="150px" height="100px" alt="aws-logo" src="https://user-images.githubusercontent.com/38281651/211433086-9002c229-c939-4b24-982a-d6767b9b8320.png">
+ <img width="150px" height="100px" alt="docker-logo" src="https://user-images.githubusercontent.com/38281651/211433598-127016ab-0df8-42c1-b857-aeb15f81c62a.png">
+ <img width="150px" height="100px" alt="openwhisk-logo" src="https://user-images.githubusercontent.com/38281651/211433466-8cc30e59-2e37-4ec4-a0f6-09a7ce3bb6fd.png">
+  <img width="150px" height="100px" alt="python-logo" src="https://user-images.githubusercontent.com/38281651/211433701-596fa88c-a115-4a14-9435-136fe122f61f.png">
 </p>
 
-![image](https://user-images.githubusercontent.com/38281651/211432800-90035730-1f34-419d-b1b8-f726b745cb09.png)
 
 
+
+
+
+# Serverless FaaS for High Performance Computing
 
 High Performance Computing (HPC) workloads such as predicting weather and genome sequencing utilize neural networks and popular machine learning libraries that require significant computing power and generally run-on coupled nodes that manage their own execution environments. This requires a layered architecture that is always available for exposing supercomputing power shared between different layers to an in house or remote user(s)/endpoint whenever necessary. This results in large waiting queues, unutilized idle times, custom configurations per cluster and ultimately high maintenance costs.  
 
