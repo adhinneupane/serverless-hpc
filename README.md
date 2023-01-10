@@ -7,10 +7,6 @@
 </p>
 
 
-
-
-
-
 # Serverless FaaS for High Performance Computing
 
 High Performance Computing (HPC) workloads such as predicting weather and genome sequencing utilize neural networks and popular machine learning libraries that require significant computing power and generally run-on coupled nodes that manage their own execution environments. This requires a layered architecture that is always available for exposing supercomputing power shared between different layers to an in house or remote user(s)/endpoint whenever necessary. This results in large waiting queues, unutilized idle times, custom configurations per cluster and ultimately high maintenance costs.  
@@ -26,7 +22,6 @@ The repository is not limited to: tensorflow image classification and includes e
 ## Requirements: 
 
 ```
-
 aws-cli	 
 Apache openwhisk	
 wsk cli 
@@ -35,7 +30,14 @@ python
 TensorFlow 
 ```
 
-## Setup WSK Cli: 
+# Architecture:
+<p align="center" width="100%">
+ <img alt="image" src="https://user-images.githubusercontent.com/38281651/211247823-160e3f5f-9581-444e-a5e8-25771b46901f.png">
+</p>
+
+
+## Setup: 
+wsk-cli 
 ```
 AUTH=<YOUR UUID>
 APIHOST==<YOUR APIHOST> 
@@ -44,46 +46,25 @@ NAMESPACE=<YOUR NAMESPACE>
 ```
 wsk property set --apihost <YOUR API HOST>  --auth  <Your auth code from the Runtime team>  namespace  <Your namespace from the Runtime team>
 ```
-```
-wsk list
-```
-## Setup aws-cli/docker: 
-```
-~/.aws/credentials
-AWS_ACCESS_KEY_ID:<AWS_ACCESS_KEY_ID>
-SECRET_AWS_ACCESS_KEY_ID:<SECRET_AWS_ACCESS_KEY_ID>
-
-~/.aws/config 
-[dev]
+aws-cli 
+``` 
 region = <region>
 output = json
 cli-binary-format = raw-in-base64-out
 ``` 
+## Deploy: 
+<img width="1057" alt="image" src="https://user-images.githubusercontent.com/38281651/202928806-98f26947-8efd-4ed7-beb7-7134f53f5663.png">
 
-## Boot: 
 ```
 cd ../serverless-hpc 
 npm install 
 node index.js
 ```
 
-<img width="1057" alt="image" src="https://user-images.githubusercontent.com/38281651/202928806-98f26947-8efd-4ed7-beb7-7134f53f5663.png">
 
-
-# Lambda Architecture and Autoscaling:
-
-<p align="center" width="100%">
- <img alt="image" src="https://user-images.githubusercontent.com/38281651/211247823-160e3f5f-9581-444e-a5e8-25771b46901f.png">
-</p>
-
-## Results
-<p align="center" width="100%">
- <img width="717" alt="image" src="https://user-images.githubusercontent.com/38281651/202928716-c30a769f-ed09-4d49-bdab-a4fe72a3d158.png">
-</p>
 
 
 ## Author
-
 Ashutosh Neupane
 <br>adhinneupane2020@gmail.com</br>
 
