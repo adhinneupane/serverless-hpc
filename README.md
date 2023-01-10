@@ -1,17 +1,12 @@
 # Serverless FaaS for High Performance Computing
 
 <p align="center" width="100px" height="100px">
- <img alt="image" src="(https://user-images.githubusercontent.com/38281651/211432697-cac697ab-f89a-44af-af5c-8247b3d40e7c.png)">
+ <img alt="image" src="
+">
 </p>
 
+![image](https://user-images.githubusercontent.com/38281651/211432800-90035730-1f34-419d-b1b8-f726b745cb09.png)
 
-<p align="center" width="100px" height="100px">
- <img alt="image" src="(https://user-images.githubusercontent.com/38281651/211432697-cac697ab-f89a-44af-af5c-8247b3d40e7c.png)">
-</p>
-
-<p align="center" width="100px" height="100px">
- <img alt="image" src="(https://user-images.githubusercontent.com/38281651/211432697-cac697ab-f89a-44af-af5c-8247b3d40e7c.png)">
-</p>
 
 
 High Performance Computing (HPC) workloads such as predicting weather and genome sequencing utilize neural networks and popular machine learning libraries that require significant computing power and generally run-on coupled nodes that manage their own execution environments. This requires a layered architecture that is always available for exposing supercomputing power shared between different layers to an in house or remote user(s)/endpoint whenever necessary. This results in large waiting queues, unutilized idle times, custom configurations per cluster and ultimately high maintenance costs.  
