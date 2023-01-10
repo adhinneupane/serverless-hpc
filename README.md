@@ -70,11 +70,6 @@ node index.js
 <img width="1057" alt="image" src="https://user-images.githubusercontent.com/38281651/202928806-98f26947-8efd-4ed7-beb7-7134f53f5663.png">
 
 
-## Recommended resources:
-
-t3.xlarge instance : AWS 
-AMI: Linux 
-
 # Lambda Architecture and Autoscaling:
 
 <p align="center" width="100%">
