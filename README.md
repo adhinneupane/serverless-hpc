@@ -47,7 +47,7 @@ wsk property set --apihost <YOUR API HOST>  --auth  <Your auth code from the Run
 ```
 wsk list
 ```
-## Setup AWS Cli/Docker: 
+## Setup aws-cli/docker: 
 ```
 ~/.aws/credentials
 AWS_ACCESS_KEY_ID:<AWS_ACCESS_KEY_ID>
@@ -60,7 +60,7 @@ output = json
 cli-binary-format = raw-in-base64-out
 ``` 
 
-## Run: 
+## Boot: 
 ```
 cd ../serverless-hpc 
 npm install 
