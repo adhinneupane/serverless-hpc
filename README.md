@@ -62,8 +62,6 @@ node index.js
 ```
 
 
-
-
 ## Author
 Ashutosh Neupane
 <br>adhinneupane2020@gmail.com</br>
