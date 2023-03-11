@@ -1,0 +1,32 @@
+{
+  "Type" : "AWS::Lambda::Function",
+  "Properties" : {
+      "Architectures" : [ "x86_64 OR arm64"],
+      "Code" : "code for lambda function to run on execution time",
+      "CodeSigningConfigArn" : "generate from aws signer - validates authenticity",
+      "DeadLetterConfig" : "where failing events processed by lambda goes to",
+      "Description" : "general description",
+      "Environment" : "Environment variables that are accessible from function code during execution",
+      "EphemeralStorage" : "size of /tmp directory in MB default is 512 but it can be any whole number between 512 and 10,240 MB",
+      "FileSystemConfigs" : [ FileSystemConfig, ... ],
+      "FunctionName" : "String",
+      "Handler" : "String",
+      "ImageConfig" : "ImageConfig to override docker container",
+      "KmsKeyArn" : "ARN of KMS",
+      "Layers" : [ String, ... ],
+      "MemorySize" : Integer,
+      "PackageType" : "Image/Zip",
+      "ReservedConcurrentExecutions" : "simultaneous executions to reserve for function",
+      "Role" : "ARN of functions execution role",
+      "Runtime" : "only required if the deployment package is a .zip file archive",
+      "RuntimeManagementConfig" : "Set runtime management configuration for a functions  version",
+      "SnapStart" : "functions snapstart setting",
+      "Tags" : [ Tag, ... ],
+      "Timeout" : "timeout settings in seconds",
+      "TracingConfig" : "trace incoming requests with X-Ray",
+      "VpcConfig" : "network connectivity to AWS Resources in a VPC",
+      "Ref": "return specified value of parameter or resource",
+      "":"",
+
+    }
+}
